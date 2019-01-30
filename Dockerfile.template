@@ -3,15 +3,14 @@ FROM resin/%%RESIN_MACHINE_NAME%%-python
 #switch on systemd init system in container
 ENV INITSYSTEM on
 
-# # pip install python deps from requirements.txt
-# # For caching until requirements.txt changes
-# COPY ./requirements.txt /requirements.txt
-# RUN READTHEDOCS=True pip install -r /requirements.txt
+# pip install python deps from requirements.txt
+# For caching until requirements.txt changes
+COPY ./requirements.txt /requirements.txt
+RUN READTHEDOCS=True pip install -r /requirements.txt
 COPY ./config.yml /data/config/config.yml
 RUN apt-get update && \
 apt-get install python-yaml && \
-pip install --upgrade pip && \
-pip install -r picamera
+pip install --upgrade pip
 
 
 COPY . /usr/src/app
