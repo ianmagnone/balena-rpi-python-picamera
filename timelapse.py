@@ -8,7 +8,7 @@ from time import sleep
 import yaml
 
 # config = yaml.safe_load(open(os.path.join(sys.path[0], "config.yml")))
-config = yaml.safe_load(open(data/config/ "config.yml")))
+config = yaml.safe_load(open(data/config/ "config.yml"))
 image_number = 0
 
 
