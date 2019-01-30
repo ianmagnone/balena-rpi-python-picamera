@@ -1,3 +1,3 @@
 modprobe v4l2_common && python timelapse.py &
-cd /data
+cd /usr/src/app/
 python -m SimpleHTTPServer 80
