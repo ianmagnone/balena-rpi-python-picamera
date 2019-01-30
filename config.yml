@@ -4,7 +4,7 @@
 ##################
 
 # Image resolution Set to empty object (`{ }`) to use default resolution.
-resolution: {}
+resolution: 
   width: 2592
   height: 1944
 
