@@ -8,7 +8,7 @@ ENV INITSYSTEM on
 COPY ./requirements.txt /requirements.txt
 RUN READTHEDOCS=True pip install -r /requirements.txt
 RUN apt-get update && \
-apt-get install libyaml-dev
+apt-get install python-yaml
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
