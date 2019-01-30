@@ -10,7 +10,9 @@ ENV INITSYSTEM on
 COPY ./config.yml /data/config/config.yml
 RUN apt-get update && \
 apt-get install python-yaml && \
+pip install --upgrade pip && \
 pip install picamera
+
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
