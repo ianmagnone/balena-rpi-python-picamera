@@ -102,6 +102,9 @@ def create_video():
         print '\nCreating video.\n'
         os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')  # noqa
 
+def main():
+    create_timestamped_dir(dir)
+    capture_image()
+    create_video()
 
-# Kick off the video process if it's enabled in the configuration
-create_video()
+main()
