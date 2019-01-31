@@ -90,10 +90,6 @@ create_timestamped_dir(dir)
 # Kick off the capture process.
 capture_image()
 
-# Kick off the video process if it's enabled in the configuration
-create_video()
-
-# TODO: These may not get called after the end of the threading process...
 # Create an animated gif (Requires ImageMagick).
 def create_gif():
     if config['create_gif']:
@@ -105,3 +101,8 @@ def create_video():
     if config['create_video']:
         print '\nCreating video.\n'
         os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')  # noqa
+
+
+# Kick off the video process if it's enabled in the configuration
+sleep(10)
+create_video()
