@@ -91,7 +91,7 @@ create_timestamped_dir(dir)
 capture_image()
 
 # Kick off the video process if it's enabled in the configuration
-
+create_video()
 
 # TODO: These may not get called after the end of the threading process...
 # Create an animated gif (Requires ImageMagick).
