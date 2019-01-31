@@ -92,14 +92,14 @@ dir = os.path.join(
 def create_gif():
     if config['create_gif']:
         print '\nCreating animated gif.\n'
-        os.system('convert -delay 10 -loop 0 ' + dir + '/image*.jpg ' + dir + '-timelapse.gif')  # noqa
+        os.system('convert -delay 10 -loop 0 ' + dir + '/image*.jpg ' + dir + '-timelapse.gif')
 
 
 # Create a video (Requires avconv - which is basically ffmpeg).
 def create_video():        
     if config['create_video']:
         print '\nCreating video.\n'
-        os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')  # noqa
+        os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')
 
 
 def main():
