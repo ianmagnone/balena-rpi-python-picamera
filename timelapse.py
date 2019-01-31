@@ -93,6 +93,7 @@ def create_gif():
     if config['create_gif']:
         print '\nCreating animated gif.\n'
         os.system('convert -delay 10 -loop 0 ' + dir + '/image*.jpg ' + dir + '-timelapse.gif')
+        print '\nAnimated gif created.\n'
 
 
 # Create a video (Requires avconv - which is basically ffmpeg).
@@ -100,11 +101,15 @@ def create_video():
     if config['create_video']:
         print '\nCreating video.\n'
         os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')
+        print '\nVideo created.\n'
 
 
 def main():
+    print '\nCreating timestamped dir.\n'
     create_timestamped_dir(dir)
+    print '\nCapturing images.\n'
     capture_image()
+    print '\nCreating video from main.\n'
     create_video()
 
 
