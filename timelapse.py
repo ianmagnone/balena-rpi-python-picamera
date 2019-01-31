@@ -107,4 +107,5 @@ def main():
     capture_image()
     create_video()
 
+# Define main function
 main()
