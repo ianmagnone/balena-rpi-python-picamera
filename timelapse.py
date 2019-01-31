@@ -80,15 +80,13 @@ def capture_image():
     except KeyboardInterrupt, SystemExit:
         print '\nTime-lapse capture cancelled.\n'
 
+
 # Create directory based on current timestamp.
 dir = os.path.join(
     sys.path[0],
     'series-' + datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 )
-create_timestamped_dir(dir)
 
-# Kick off the capture process.
-capture_image()
 
 # Create an animated gif (Requires ImageMagick).
 def create_gif():
@@ -96,16 +94,20 @@ def create_gif():
         print '\nCreating animated gif.\n'
         os.system('convert -delay 10 -loop 0 ' + dir + '/image*.jpg ' + dir + '-timelapse.gif')  # noqa
 
+
 # Create a video (Requires avconv - which is basically ffmpeg).
 def create_video():        
     if config['create_video']:
         print '\nCreating video.\n'
         os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')  # noqa
 
+
 def main():
     create_timestamped_dir(dir)
     capture_image()
     create_video()
 
+
 # Define main function
 main()
+
