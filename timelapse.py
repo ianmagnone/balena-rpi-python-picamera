@@ -74,6 +74,8 @@ def capture_image():
             image_number += 1
         else:
             print '\nTime-lapse capture complete!\n'
+            create_gif()
+            create_video()
             # TODO: This doesn't pop user into the except block below :(.
             sys.exit()
 
@@ -109,8 +111,8 @@ def main():
     create_timestamped_dir(dir)
     print '\nCapturing images.\n'
     capture_image()
-    print '\nCreating video from main.\n'
-    create_video()
+    # print '\nCreating video from main.\n'
+    # create_video()
 
 
 # Define main function
