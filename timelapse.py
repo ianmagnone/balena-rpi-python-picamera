@@ -104,5 +104,4 @@ def create_video():
 
 
 # Kick off the video process if it's enabled in the configuration
-sleep(10)
 create_video()
