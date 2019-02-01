@@ -6,7 +6,7 @@ ENV INITSYSTEM on
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
 COPY ./requirements.txt /requirements.txt 
-# ./Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb /fdk-aac_0.1.6-1_armhf.deb && \
+Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb /fdk-aac_0.1.6-1_armhf.deb && \
 # ./Vidware_Packages/ffmpeg_4.0.2-1_armhf.deb /ffmpeg_4.0.2-1_armhf.deb && \
 # ./Vidware_Packages/libass_0.14.0-1_armhf.deb /libass_0.14.0-1_armhf.deb && \
 # ./Vidware_Packages/mp3lame_3.100-1_armhf.deb /mp3lame_3.100-1_armhf.deb && \
@@ -24,12 +24,6 @@ apt-get install python-yaml && \
 # dpkg -i mp3lame_3.100-1_armhf.deb && \
 # dpkg -i mpv_0.29.0-1_armhf.deb && \
 # dpkg -i x264_0.155-1_armhf.deb && \
-apt install ./fdk-aac_0.1.6-1_armhf.deb && \
-apt install ./ffmpeg_4.0.2-1_armhf.deb && \
-apt install ./libass_0.14.0-1_armhf.deb && \
-apt install ./mp3lame_3.100-1_armhf.deb && \
-apt install ./mpv_0.29.0-1_armhf.deb && \
-apt install ./x264_0.155-1_armhf.deb && \
 pip install --upgrade pip
 
 
