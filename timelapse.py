@@ -109,8 +109,10 @@ def create_video():
 def main():
     print '\nCreating timestamped dir.\n'
     create_timestamped_dir(dir)
+
     print '\nCapturing images.\n'
     capture_image()
+    
     # print '\nCreating video from main.\n'
     # create_video()
 

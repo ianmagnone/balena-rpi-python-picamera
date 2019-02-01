@@ -10,7 +10,13 @@ RUN READTHEDOCS=True pip install -r /requirements.txt
 # COPY ./config.yml /data/config/config.yml
 RUN apt-get update && \
 apt-get install python-yaml && \
-apt-get install libav-tools && \
+#apt-get install libav-tools && \
+dpkg -i /Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb &&\
+dpkg -i /Vidware_Packages/ffmpeg_4.0.2-1_armhf.deb &&\
+dpkg -i /Vidware_Packages/libass_0.14.0-1_armhf.deb &&\
+dpkg -i /Vidware_Packages/mp3lame_3.100-1_armhf.deb &&\
+dpkg -i /Vidware_Packages/mpv_0.29.0-1_armhf.deb &&\
+dpkg -i /Vidware_Packages/x264_0.155-1_armhf.deb &&\
 pip install --upgrade pip
 
 
