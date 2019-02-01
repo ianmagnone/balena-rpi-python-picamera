@@ -16,7 +16,7 @@ COPY Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb /fdk-aac_0.1.6-1_armhf.deb
 RUN READTHEDOCS=True pip install -r /requirements.txt
 # COPY ./config.yml /data/config/config.yml
 RUN apt-get update && \
-apt-get install python-yaml && \
+apt-get install python-yaml
 #apt-get install libav-tools && \
 RUN dpkg -i fdk-aac_0.1.6-1_armhf.deb
 # dpkg -i ffmpeg_4.0.2-1_armhf.deb && \
