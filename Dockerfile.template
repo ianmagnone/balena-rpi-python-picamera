@@ -24,7 +24,7 @@ RUN dpkg -i fdk-aac_0.1.6-1_armhf.deb
 # dpkg -i mp3lame_3.100-1_armhf.deb && \
 # dpkg -i mpv_0.29.0-1_armhf.deb && \
 # dpkg -i x264_0.155-1_armhf.deb && \
-pip install --upgrade pip
+RUN pip install --upgrade pip
 
 
 COPY . /usr/src/app
