@@ -5,13 +5,13 @@ ENV INITSYSTEM on
 
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
-COPY ./requirements.txt /requirements.txt
-COPY Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb /fdk-aac_0.1.6-1_armhf.deb && \
+COPY ./requirements.txt /requirements.txt && \
+Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb /fdk-aac_0.1.6-1_armhf.deb && \
 Vidware_Packages/ffmpeg_4.0.2-1_armhf.deb /ffmpeg_4.0.2-1_armhf.deb && \
 Vidware_Packages/libass_0.14.0-1_armhf.deb /libass_0.14.0-1_armhf.deb && \
 Vidware_Packages/mp3lame_3.100-1_armhf.deb /mp3lame_3.100-1_armhf.deb && \
 Vidware_Packages/mpv_0.29.0-1_armhf.deb /mpv_0.29.0-1_armhf.deb && \
-Vidware_Packages/x264_0.155-1_armhf.deb /x264_0.155-1_armhf.deb && \
+Vidware_Packages/x264_0.155-1_armhf.deb /x264_0.155-1_armhf.deb
 
 RUN READTHEDOCS=True pip install -r /requirements.txt
 # COPY ./config.yml /data/config/config.yml
