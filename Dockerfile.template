@@ -6,25 +6,25 @@ ENV INITSYSTEM on
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
 COPY ./requirements.txt /requirements.txt
-COPY Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb /fdk-aac_0.1.6-1_armhf.deb
-COPY Vidware_Packages/ffmpeg_4.0.2-1_armhf.deb /ffmpeg_4.0.2-1_armhf.deb
-COPY Vidware_Packages/libass_0.14.0-1_armhf.deb /libass_0.14.0-1_armhf.deb
-COPY Vidware_Packages/mp3lame_3.100-1_armhf.deb /mp3lame_3.100-1_armhf.deb
-COPY Vidware_Packages/mpv_0.29.0-1_armhf.deb /mpv_0.29.0-1_armhf.deb
-COPY Vidware_Packages/x264_0.155-1_armhf.deb /x264_0.155-1_armhf.deb
+# COPY Vidware_Packages/fdk-aac_0.1.6-1_armhf.deb /fdk-aac_0.1.6-1_armhf.deb
+# COPY Vidware_Packages/ffmpeg_4.0.2-1_armhf.deb /ffmpeg_4.0.2-1_armhf.deb
+# COPY Vidware_Packages/libass_0.14.0-1_armhf.deb /libass_0.14.0-1_armhf.deb
+# COPY Vidware_Packages/mp3lame_3.100-1_armhf.deb /mp3lame_3.100-1_armhf.deb
+# COPY Vidware_Packages/mpv_0.29.0-1_armhf.deb /mpv_0.29.0-1_armhf.deb
+# COPY Vidware_Packages/x264_0.155-1_armhf.deb /x264_0.155-1_armhf.deb
 
+RUN pip install --upgrade pip
 RUN READTHEDOCS=True pip install -r /requirements.txt
-# COPY ./config.yml /data/config/config.yml
+COPY ./config.yml /data/config/config.yml
 RUN apt-get update
 RUN apt-get install python-yaml
-#apt-get install libav-tools && \
-RUN dpkg -i fdk-aac_0.1.6-1_armhf.deb
-RUN dpkg -i ffmpeg_4.0.2-1_armhf.deb
-RUN dpkg -i libass_0.14.0-1_armhf.deb
-RUN dpkg -i mp3lame_3.100-1_armhf.deb
-RUN dpkg -i mpv_0.29.0-1_armhf.deb
-RUN dpkg -i x264_0.155-1_armhf.deb
-RUN pip install --upgrade pip
+apt-get install libav-tools && \
+# RUN dpkg -i fdk-aac_0.1.6-1_armhf.deb
+# RUN dpkg -i ffmpeg_4.0.2-1_armhf.deb
+# RUN dpkg -i libass_0.14.0-1_armhf.deb
+# RUN dpkg -i mp3lame_3.100-1_armhf.deb
+# RUN dpkg -i mpv_0.29.0-1_armhf.deb
+# RUN dpkg -i x264_0.155-1_armhf.deb
 
 
 COPY . /usr/src/app

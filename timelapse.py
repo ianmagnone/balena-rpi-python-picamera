@@ -102,14 +102,15 @@ def create_gif():
 def create_video():        
     if config['create_video']:
         print '\nCreating video.\n'
-        # os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')
-        os.system('ffmpeg -r 24 -pattern_type glob -i ' + dir + ' *.JPG -i image%05d.jpg -c:v h264_omx -b:v 4500k ' + dir + '/timelapse.mp4')
+        os.system('avconv -framerate 20 -i ' + dir + '/image%05d.jpg -vf format=yuv420p ' + dir + '/timelapse.mp4')
+        # os.system('ffmpeg -r 24 -pattern_type glob -i ' + dir + ' *.JPG -i image%05d.jpg -c:v h264_omx -b:v 4500k ' + dir + '/timelapse.mp4')
         # example of ffmpeg timelapse video creation 
         # ffmpeg -r 24 -pattern_type glob -i '*.JPG' -i DSC_%04d.JPG
         # example of hardware accelerated video creation
         # ffmpeg -i input.AVI -c:v h264_omx -b:v 4500k -c:a copy output.MP4
         print '\nVideo created.\n'
 
+# ffmpeg -r 24 -pattern_type glob -i *.JPG -i image%05d.jpg -c:v h264_omx -b:v 4500k /timelapse.mp4
 
 def main():
     print '\nCreating timestamped dir.\n'
