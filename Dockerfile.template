@@ -18,7 +18,7 @@ RUN READTHEDOCS=True pip install -r /requirements.txt
 COPY ./config.yml /data/config/config.yml
 RUN apt-get update
 RUN apt-get install python-yaml
-apt-get install libav-tools && \
+RUN apt-get install libav-tools
 # RUN dpkg -i fdk-aac_0.1.6-1_armhf.deb
 # RUN dpkg -i ffmpeg_4.0.2-1_armhf.deb
 # RUN dpkg -i libass_0.14.0-1_armhf.deb
